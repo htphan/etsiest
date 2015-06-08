@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Etsiest</title>
+    <link rel="stylesheet" href="application.css">
+
+  </head>
+  <body>
+  
+    <div class="container">
+
+      <header>  
+        <h1 class="logo">Etsiest</h1>
+        <form action="etsy_search" method="get">
+          <input class="search" name="q" type="text" placeholder="Search for items or shops" required>
+          <input class="button" type="submit" value="Submit">
+        </form>
+
+        <div class="header-directory">
+          <ul class="header-buttons">
+            <li class="home">Home</li>
+            <li class="favorites">Favorites</li>
+            <li class="user">You</li>
+            <li class="cart">Cart</li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="main">
+        <div class="content">
+          <div class="sidebar">
+            <h3 class="category-header">All Categories</h3>
+            <ul class="categories">
+              <li>Home & Living</li>
+              <li>Art & Collectibles</li>
+              <li>Weddings</li>
+              <li>Clothing</li>
+              <li>Jewelry</li>
+              <li>Paper & Party Supplies</li>
+              <li>Accessories</li>
+              <li>Craft Supplies & Tools</li>
+              <li>Bags & Purses</li>
+              <li>Bath & Beauty</li>
+              <li>Shoes</li>
+              <li>Books, Movies & Music</li>
+              <li>Electronics & Accessories</li>
+              <li>Pet Supplies</li>
+              <li>Toys & Games</li>
+            </ul>
+          </div>
+
+          <div class="group">
+            <div class="list">
+              <% @results.each do |listing| %>
+                <%= erb :product, locals: { listing: listing } %>
+              <% end %>
+
+  <!--             <div class="product">
+                <div class="product-image">
+                  <img class="image" src="http://lorempixel.com/225/172/cats/">
+                </div>
+                <div class="product-desc">
+                  <div class="top-row">
+                    <a href="#">This really long item name trying to be crazy</a>
+                  </div>
+                  <div class="bottom-row">
+                    <a href="#">Store Name</a>
+                    <div class="price">$10.00<span class="currency">USD</span></div>
+                  </div>
+                </div>
+              </div> -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        &copy; Etsiest
+      </footer>
+    </div>
+  </body>
+</html>

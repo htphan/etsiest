@@ -1,0 +1,14 @@
+<div class="product">
+  <div class="product-image">
+      <img class="image" src="<%= listing['Images'].first['url_fullxfull'] %>">
+  </div>
+  <div class="product-desc">
+    <div class="top-row">
+    <a href="<%= listing['url'] %>"><%= listing['title'] %></a>
+    </div>
+    <div class="bottom-row">
+      <a href="#"><%= listing['Shop']['shop_name'] %></a>
+      <div class="price">$<%= listing['price'] %><span class="currency"> <%= listing['currency_code'] %></span></div>
+    </div>
+  </div>
+</div>
